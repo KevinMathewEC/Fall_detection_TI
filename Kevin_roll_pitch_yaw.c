@@ -212,7 +212,7 @@ void main()
     double roll,pitch,yaw;
     MadgwickAHRSupdate(.98,.7,.5,.23,.23,.78,.89,.167,.34);//sensor data 
     roll=atan2((2*q1*q2-2*q0*q3), 2*q0*q0+2*q1*q1-1);
-    pitch=-sin(2*q1*q3 + 2*q0*q2);
+    pitch=-asin(2*q1*q3 + 2*q0*q2);
     yaw=atan2((2*q2*q3- 2*q0*q1), (2*q0*q0+ 2*q3*q3 - 1));
     printf("roll =:%f",roll);
     printf("/n pitch =:%f",pitch);
