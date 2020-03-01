@@ -431,12 +431,7 @@ void loop()
     Serial.print(pitch, 2);
     Serial.print(", ");
     Serial.println(roll, 2);
-    rms=invSqrt(ax * ax + ay * ay + az * az);
-    if(rms*1000>2500){
-        if((rms*1000>720)&&(rms*1000<1280))
-            if((fabs(roll)>50)||(fabs(pitch)>50))
-                Serial.print("Fall detected");
-    }
+
 
     // With these settings the filter is updating at a ~145 Hz rate using the Madgwick scheme and
     // >200 Hz using the Mahony scheme even though the display refreshes at only 2 Hz.
